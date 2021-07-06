@@ -1,26 +1,36 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 
-const WriteReview = (id) => {
+const WriteReview = (props) => {
   const [ author, setAuthor ] = useState();
   const [ content, setContent ] = useState();
+
+  const testData = {                // test case
+    "author": "Momo",
+    "content": "Momo loved it!"
+  }
 
   const authorChange = (event) => {
     setAuthor({ author: event.target.value });
   }
 
   const contentChange = (event) => {
-    setContent({ content: event.target.value });
+    setContent(event.target.value);
   }
 
   const reviewSubmit = (event) => {
-    fetch(`http://rp-fe.momoproject.co:3464/api/food/${id.data}/review`, {
+    let formData = new FormData();
+    formData.append('author', author);
+    formData.append('content', content)
+
+    fetch(`http://rp-fe.momoproject.co:3464/api/food/${props.data}/review`, {
       method: 'POST',
-      body: JSON.stringify([author, content])
+      mode: 'cors',
+      body: formData  // push testData, but not working
 
     }).then((response) => {
       console.log(response)
-      return response.text();
+      return response;
     });
 
     event.preventDefault();
