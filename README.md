@@ -4,7 +4,7 @@
 
 This repository had been summitted a MomoProject pre-task.
 
-# Installation
+## Installation
 
 ```
 npm install create-react-app
@@ -15,7 +15,7 @@ cd momo
 yarn start
 ```
 
-# Project Structure
+## Project Structure
 
 - pages
 
