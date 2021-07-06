@@ -23,3 +23,8 @@ npm start run
 
 - components
  
+
+## Branches
+
+- main : Main Branch
+- dev : Development Branch
