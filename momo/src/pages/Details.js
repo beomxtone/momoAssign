@@ -113,8 +113,6 @@ const Details = (match) => {
   if (state === null) return <div>Loading...</div>;
 
   if (state !== null) {
-    console.log(state.imageUrl)
-
     const obj = {
       0: <Ingredients data={state.ingredients} />,
       1: <Reviews data={tab} clickHandler={clickHandler}/>,
